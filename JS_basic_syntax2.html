@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 객체 구조
+        const user = {
+            name: 'Alice',
+            'key with space': true,
+            greeting: (name='Annonymus') => {
+                console.log(`Hello, ${name}!`)
+                // return `Hello, ${name}!`
+            }
+
+        }
+
+        user.greeting()
+
+        // 단축 속성
+        const name = 'Alice'
+        const age = 30
+
+        const visitor = {
+            name,
+            age,
+        }
+
+        // 단축 메서드
+        const myObj1 = {
+            greeting(name) {
+                return `Hello, ${name}`
+            }
+        }
+
+        // 계산된 속성
+        // const product = prompt('물건 이름을 입력해주세요.')
+        // const prefix = 'my'
+        // const suffix = 'property'
+
+        // const bag = {
+        //     [product]: 5,
+        //     [prefix + suffix]: 'value',
+        // }
+
+        // console.log(bag)
+
+        // 구조 분해 할당
+        const userInfo = {
+            firstName: 'Alice',
+            userId: 'alice123',
+            email: 'alice123@gmail.com',
+        }
+
+        const { firstName, userId, email } = userInfo
+        console.log(firstName, userId, email)
+
+
+        // 구조 분해 할당 활용
+        // 함수의 매개변수에 사용
+
+        function printInfo({firstName, userId, email}) {
+            console.log(firstName, userId, email)
+        }
+
+        printInfo(userInfo)
+
+
+        // 객체와 전개 구문(...)
+        const obj = {b: 2, c: 3, d: 4}
+        const newObj = {a:1, ...obj, e:5}
+
+        console.log(newObj)
+
+        // 유용한 객체 메서드
+        // Objects.keys(객체명), Object.values(객체명) 둘 다 각각 키, 값들을 '배열'로 반환한다.
+        console.log(Object.keys(newObj))
+        console.log(Object.values(newObj))
+
+        // Optional Chaining
+        const Obj2 = {
+            city: '구미',
+            country: {
+                countryName: '대한민국'
+            }
+        }
+
+        // 기존 사용 방식
+        if (Obj2 && Obj2.country && Obj2.country.countryName) {
+            console.log(Obj2.country.countryName)
+        }
+
+        // Optional Chaining
+        console.log(Obj2?.country?.countryName)
+
+        //---------------------------------------------------------------------------------------
+
+        // Json
+
+        // Object <-> Json 변환하기.
+        const jsObject = {
+            coffee: 'Americano',
+            iceCream: 'Cookie and cream',
+        }
+
+        // Object -> Json
+        const objToJson = JSON.stringify(jsObject)
+        console.log(objToJson)      // {"coffee":"Americano","iceCream":"Cookie and cream"}
+        console.log(typeof objToJson)   // string
+
+        // Object <- Json
+        const jsonToObj = JSON.parse(objToJson)
+        console.log(jsonToObj)          // {coffee: 'Americano', iceCream: 'Cookie and cream'}
+        console.log(typeof jsonToObj)   // object
+
+
+        // forEach
+        const array = [1, 2, 3, 4, 5]
+
+        array.forEach(function (num, idx, arr) {
+            console.log(`배열 ${arr}의 ${idx}번 인덱스의 요소는 ${num} 입니다.`)
+        })
+
+
+        // map
+        const persons = [
+            { name: 'Alice', age: 20 },
+            { name: 'Bob', age: 25 },
+        ]
+
+        // 배열 persons를 순회하여 각 객체의 name 속성 값을 추출하여 새로운 배열로 만들기.
+        // 배열 persons의 요소는 "객체이다.(person)"
+        
+        // const newArray = persons.map(function (person) {    
+        //     return person.name
+        // })
+        
+        // 화살표 함수 버전
+        const newArray = persons.map((person) => {
+            return person.name
+        })
+        
+        console.log(newArray)
+    </script>
+</body>
+</html>

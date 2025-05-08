@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border-width: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="outerouter">
+        outerouter
+    </button>
+    
+
+
+    <script>
+        const eventHandler1 = (event) => {
+            console.log('outerouter')
+        }
+        const eventHandler2 = (event) => {
+            console.log('outer')
+        }
+        const eventHandler3 = (event) => {
+            console.log('inner')
+        }
+
+        const outerouter = document.querySelector('#outerouter')
+        const outer = document.querySelector('#outer')
+        const inner = document.querySelector('#inner')
+
+        outerouter.addEventListener(click, eventHandler1)
+        outer.addEventListener(click, eventHandler2)
+        inner.addEventListener(click, eventHandler3)
+
+
+    </script>
+</body>
+</html>

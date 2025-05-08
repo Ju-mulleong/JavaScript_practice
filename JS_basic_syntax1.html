@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const a = 10
+        const b = 11
+        console.log(!a)
+
+        if (a === b) {
+            console.log('a equal b')
+        } else {
+            console.log('a not equal b')
+        }
+
+        a === b ? console.log('a equal b') : console.log('a not equal b')
+
+        let i = 0
+        
+        while (i < 6) {
+            console.log(i)
+            i += 1
+        }
+
+        console.log('------------------------------------')
+
+        for (let i = 0; i < 6; i++) {
+            console.log(i)
+        }
+
+        console.log('------------------------------------')
+
+        const fruits = {
+            a: 'apple',
+            b: 'banana',
+        }
+
+        for (const property in fruits) {
+            console.log(property)           // 'a', 'b'
+            console.log(fruits[property])   // 'apple', 'banana'
+            console.log(fruits.property)    // None, None
+        }
+
+        console.log('------------------------------------')
+
+        const numbers = [0, 1, 2, 3]
+
+        for (const number of numbers) {
+            console.log(number) // 0, 1, 2, 3
+        }
+
+        // 선언식
+        function add (a, b) {
+            return a+b
+        }
+
+        console.log(add(10, 20))    // 30
+
+        // 표현식
+        const avg = function (a, b) {
+            return (a+b)/2
+        }
+
+        console.log(avg(10, 20))    // 15
+
+        // 기본 함수 매개변수
+        const greeting = function (name='Anonymous') {
+            return `Hi ${name}`
+        }
+
+        console.log(greeting())
+
+        // 나머지 매개변수(...)
+        // 당연히 하나만 작성, 마지막에 위치.
+        const myFunc = function (param1, param2, ...restParams) {
+            return [param1, param2, restParams]
+        }
+
+        console.log(myFunc(1, 2, 3, 4, 5)) // [1, 2, [3, 4, 5]]
+        console.log(myFunc(1, 2))   // [1, 2, []]
+
+        // 매개변수 인자가 불일치 할 때 
+        const threeArgs = function (param1, param2, param3) {
+            return [param1, param2, param3]
+        }
+
+        console.log(threeArgs())      // [undefined, undefined, undefined]
+        console.log(threeArgs(1))     // [1, undefined, undefined]
+        console.log(threeArgs(1, 2))  // [1, 2, undefined]
+        console.log(threeArgs(1, 2, 3))   // [1, 2, 3]
+        console.log(threeArgs(1, 2, 3, 4))  // [1, 2, 3]
+
+
+        // 화살표 함수
+        
+        // const arrow = function (name) {
+        //     return `hello ${name}`
+        // }
+
+        // 더 줄일 수 있지만, (인자가 1개있거나 하는 경우) 이렇게 주로 사용할 것.
+        const arrow = (name) => {
+            return `hello, ${name}`
+        }
+
+        const secondArrow = (name) => {
+            return `Good morning, ${name}!`
+        }
+
+        const thirdArrow = (name) => {
+            return `Good night, ${name}...`
+        }
+
+    </script>
+</body>
+</html>

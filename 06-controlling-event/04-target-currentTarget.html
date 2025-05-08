@@ -39,6 +39,7 @@
 
   <script>
     const outerOuterElement = document.querySelector('#outerouter')
+    const outerElement = document.querySelector('#outer')
 
     const clickHandler = function (event) {
       console.log('currentTarget:', event.currentTarget.id)
@@ -46,6 +47,7 @@
     }
 
     outerOuterElement.addEventListener('click', clickHandler)
+    outerElement.addEventListener('click', clickHandler)
   </script>
 </body>
 

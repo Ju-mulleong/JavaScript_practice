@@ -21,10 +21,12 @@
     const ulTag = document.querySelector('ul')
 
     // 2. 이벤트핸들러 등록
+    // 콜백함수를 익명함수 화살표 표현식으로 작성.
     btn.addEventListener('click', (event) => {
       // 2.1 입력데이터 저장
       const inputData = inputTag.value
 
+      // .trim()으로 불필요한 공백 제거.
       if (inputData.trim()) {
         // 2.2 데이터를 저장할 li 생성
         const liTag = document.createElement('li')

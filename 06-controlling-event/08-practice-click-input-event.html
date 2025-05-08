@@ -24,6 +24,7 @@
     const inputTag = document.querySelector('#text-input')
     const h1Tag = document.querySelector('h1')
 
+    // input이 들어오면 그 값을 h1의 textContent에 할당한다.
     const inputHandler = function (event) {
       h1Tag.textContent = event.currentTarget.value
     }
